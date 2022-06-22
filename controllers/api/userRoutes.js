@@ -53,36 +53,6 @@ router.post('/login', async (req, res) => {
 });
 
 
-router.put('/profile', async (req, res) => {
-  try {
-     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Game }]
-    });
-  
-    const newData = await User.update(
-      {
-        username: req.body.username,
-        avatar: req.body.avatar,
-        password: req.body.password
-      },
-      {
-        where: {
-          id: req.session.user_id
-        }
-      }
-    )
-    console.log(newData)
-    if(!newData) {
-      res.status(404).json({ message: 'No user found'});
-      return;
-    }
-    res.status(200).json(newData)
-  } catch (err) {
-    res.status(500).json(err)
-  }
- })
-
 
 
 router.post('/logout', (req, res) => {

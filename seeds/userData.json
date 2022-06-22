@@ -1,11 +1,13 @@
 [
-  { "username": "Buppy",
+  { 
+    "username": "Buppy",
     "avatar": "",
     "name": "Sal",
     "email": "sal@hotmail.com",
     "password": "password12345"
   },
-  { "username": "Grown Man",
+  { 
+    "username": "Grown Man",
     "avatar": "",
     "name": "Lernantino",
     "email": "lernantino@gmail.com",

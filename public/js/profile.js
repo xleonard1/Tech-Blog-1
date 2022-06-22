@@ -1,45 +1,30 @@
+const newFormHandler = async (event) => {
+  event.preventDefault();
+
+  const title = document.querySelector('#project-name').value.trim();
+  const description = document.querySelector('#project-funding').value.trim();
+  const blogText = document.querySelector('#project-desc').value.trim();
 
 
+  if (title && description  && blogText) {
+    const response = await fetch(`/api/blogs`, {
+      method: 'POST',
+      body: JSON.stringify({ title, description, blogText}),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create project');
+    }
+  }
+};
 
 
-const iframe = document.querySelector('#iframeID')
-
-window.addEventListener('message', async function (e) {
-  points = e.data;
-})
-
-// const newFormHandler = async () => {
-//   const name = document.querySelector('.real-name').value.trim();
-
-   
-//     if (name) {
-//       const response = await fetch(`/api/games`, {
-//         method: 'POST',
-//         body: JSON.stringify({ username, name, avatar}),
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/profile')
-//       } else {
-//         alert('Failed to create project');
-//       }
-//     }
-// };
-
-   
-  
-
-if(iframe) {
-    window.addEventListener('message', function (e) {
-    
-      data = e.data;
-      console.log(data)
-      return data.json
-      })
-}
+// open up new blog post modal
 
 
 const delButtonHandler = async (event) => {
@@ -58,14 +43,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-
-document
-.querySelector('.startGame-btn')
-.addEventListener('click', function(event) {
-  event.preventDefault()
-})
-
-
 // document
 //   .querySelector('.new-project-form')
 //   .addEventListener('submit', newFormHandler);
@@ -73,3 +50,4 @@ document
 // document
 //   .querySelector('.project-list')
 //   .addEventListener('click', delButtonHandler);
+
