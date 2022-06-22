@@ -1,0 +1,50 @@
+body, html {
+  height: 100%;
+}
+
+
+
+.nav-link {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: inline-block;
+  font-size: 1.8rem;
+}
+.navbar-brand {
+  font-weight: bolder;
+  
+}
+.userJumbotron{
+  height: 40%;
+  position: relative;
+}
+
+
+.form {
+  
+  justify-content: space-between;
+
+}
+
+#avatar {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  margin-top: 4rem;
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: row; 
+  margin-top: 5.4rem;
+  margin-right: 15px;
+}
+
+.stats-list {
+
+  flex-direction: row;
+}
+.welcome-row {
+  justify-content: space-between;
+}
+
+
