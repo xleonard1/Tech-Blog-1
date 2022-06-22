@@ -27,3 +27,34 @@ body, html {
     font-weight: 600;
     font-style: italic;
 }
+
+.blogpost-jumbotron {
+     /* Set a specific height */
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: 'Trirong', serif;
+}
+
+.blogpost-jumbotron h1 {
+    margin-top: -200px;
+  color: inherit;
+  font-size: 7rem;
+  font-weight: 800;
+}
+.blogpost-jumbotron p {
+    color: inherit;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+.blog-text {
+    margin-top: -300px;
+}

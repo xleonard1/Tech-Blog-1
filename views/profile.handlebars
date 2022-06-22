@@ -14,15 +14,15 @@
    </div>
 {{!-- blog submission form --}}
 
-<form>
+<form class = 'new-blog-form'>
   <div class="form-outline mb-4">
-    <input type="text" id="form6Example3" class="form-control" />
+    <input type="text" id="blog-name" class="form-control" />
     <label class="form-label" for="form6Example3">Title</label>
   </div>
 
   <!-- Text input -->
   <div class="form-outline mb-4">
-    <input type="text" id="form6Example4" class="form-control" />
+    <input type="text" id="blog-description" class="form-control" />
     <label class="form-label" for="form6Example4">Description</label>
   </div>
 
@@ -37,20 +37,53 @@
 
   <!-- Message input -->
   <div class="form-outline mb-4">
-    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+    <textarea class="form-control" id="blog-text" rows="4"></textarea>
     <label class="form-label" for="form6Example7">Article</label>
   </div>
 
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-    <label class="form-check-label" for="form6Example8"> Create an account? </label>
-  </div>
-
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4">Submit Blog</button>
 </form>
+
+
+
+
+{{#if blogs.length}}
+  <section class="light">
+	<div class="container py-2">
+		<div class="h1 text-center text-dark" id="pageHeaderTitle">Featured Blogs</div>
+ {{#each blogs as |blog|}}
+		<article class="postcard light blue">
+			<a class="postcard__img_link" href="{{blog.id}}">
+				<img class="postcard__img" src="{{avatar}}" alt="Image Title" />
+			</a>
+			<div class="postcard__text t-dark">
+				<h1 class="postcard__title blue"><a href="#">{{blog.title}}</a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>{{format_date blog.date_created}}
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">{{blog.description}}</div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}</li>
+					<li class="tag__item play blue">
+						<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+    {{/each}}
+	</div>
+</section>
+  </div>
+  {{/if}}
+</div>
+
+
 
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"> </script>
 <script src="/js/profile.js"></script>
+

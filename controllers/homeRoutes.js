@@ -13,6 +13,11 @@ const withAuth = require('../utils/auth');
             attributes: ['name'],
           },
         ],
+
+        order: [
+          ['date_created', 'DESC'],
+        ],
+        limit: 3
       });
       // Serialize data so the template can read it
       const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -26,6 +31,10 @@ const withAuth = require('../utils/auth');
       res.status(500).json(err);
     }
   });
+
+
+ 
+  
 
 
 // Use withAuth middleware to prevent access to route
@@ -62,27 +71,29 @@ res.render('login');
 
 router.get('/post/:id', withAuth, async(req, res) => {
   try {
-    const blogData = await Blogs.findAll({
+    const blogData = await Blogs.findByPk(req.params.id,
+  
+    {
       include: [
         {
-          model: 'user',
+          model: User,
           attributes: ['name']
         },
       ],
     });
-
-    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    const blog = blogData.get({ plain: true });
 
     res.render('blogpost', {
-      blogs,
+      ...blog,
       logged_in: req.session.logged_in 
     })
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err)
   }
 })
 
-  
+
 
 module.exports = router;

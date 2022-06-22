@@ -1,12 +1,19 @@
  
-<div class="jumbotron jumbotron-fluid">
+
+<div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url({{avatar}});'>
   <div class="container">
     <h1 class="display-4">{{title}}</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <p class="lead">{{description}}</p>
   </div>
 </div>
 
 {{!-- blog post --}}
-<h1>{{title}}<span class="badge badge-secondary">New</span></h1>
-<p>{{blog_text}}</p>
+<section class="light blog-text">
+	<div class="container py-2">
+     <h1>{{title}}<span class="badge badge-secondary">New</span></h1>
+     <p>{{blog_text}}</p>
+  </div>
+</section>
+
+
 

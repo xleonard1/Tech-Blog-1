@@ -12,6 +12,10 @@ Blogs.init(
       autoIncrement: true,
       primaryKey: true,
    },
+   avatar: {
+        type: DataTypes.STRING,
+        allowNull: true,
+   },
    title: {
        type: DataTypes.STRING, 
        allowNull: false,
