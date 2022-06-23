@@ -123,6 +123,10 @@ window.onclick = function(event) {
   }
 }
 
+
+
+
+
 document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);

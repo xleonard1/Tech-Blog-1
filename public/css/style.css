@@ -75,13 +75,7 @@ body, html {
   margin-right: 15px;
 }
 
-.stats-list {
 
-  flex-direction: row;
-}
-.welcome-row {
-  justify-content: space-between;
-}
 
 
 /* blog cards */
@@ -89,6 +83,8 @@ body, html {
 
 .light {
 	background: #f3f5f7;
+  border-radius: 10px;
+  margin-top: 5rem;
 }
 
 a, a:hover {
@@ -101,13 +97,15 @@ a, a:hover {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 2.5rem;
+  font-family: 'Trirong', serif;
+
 }
 
 /* Cards */
 .postcard {
   flex-wrap: wrap;
   display: flex;
-  
+
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;
@@ -156,6 +154,8 @@ a, a:hover {
     display: flex;
     flex-direction: column;
     color: black;
+    font-family: 'Trirong', serif;
+
   }
 
   .postcard__preview-txt {
@@ -163,6 +163,8 @@ a, a:hover {
     text-overflow: ellipsis;
     text-align: justify;
     height: 100%;
+    font-family: 'Trirong', serif;
+
   }
 
   .postcard__tagbox {

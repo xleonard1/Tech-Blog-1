@@ -19,7 +19,6 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  console.log(req.body)
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
    
@@ -52,7 +51,19 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// router.post('/comments', async (req, res) => {
+//   try {
+//       const newComment = await Comment.create({
+//       ...req.body,
+//       user_id: req.session.user_id,
+//       });
 
+//       res.status(200).json(newComment)
+//   } catch(err) {
+//     console.log(err)
+//     res.status(400).json(err)
+//   }
+// })
 
 
 router.post('/logout', (req, res) => {

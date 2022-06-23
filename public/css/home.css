@@ -8,13 +8,14 @@ body, html {
     height: 10rem;
     position: relative;
     margin-bottom: 20rem;
+    margin-bottom: 25rem;
 
 }
 
 .hero-text {
     text-align: center;
     position: absolute;
-    top: 20rem;
+    top: 18rem;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Trirong', serif;
@@ -49,6 +50,8 @@ body, html {
   font-size: 7rem;
   font-weight: 800;
   text-align: center;
+  font-family: 'Trirong', serif;
+
 }
 
 #blog-title {
@@ -102,3 +105,101 @@ body, html {
   .featured-text {
     font-family: 'Trirong', serif;
   }
+
+/* comments section */
+
+@media(min-width:568px){
+  .end{
+      margin-left: auto;
+  }
+}
+
+@media(max-width:768px){
+  #post{
+      width: 100%;
+  }
+}
+#clicked{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+  width: 100%;
+  background-color: #ecb21f;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px; 
+}
+
+#post{
+  margin: 10px;
+  padding: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  background-color: #ecb21f;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px;
+  width: 50%;
+}
+
+
+
+.comments{
+  margin-top: 5%;
+  margin-left: 20px;
+}
+
+.darker{
+  border: 1px solid #ecb21f;
+  background-color: black;
+  float: right;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+.comment{
+  border: 1px solid rgba(16, 46, 46, 1);
+  float: left;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px;
+  
+}
+.comment h4,.comment span,.darker h4,.darker span{
+  display: inline;
+}
+
+
+label{
+  color: rgb(212, 208, 208);
+}
+
+#align-form{
+  margin-top: 20px;
+}
+
+
+#darker img{
+  margin-right: 15px;
+  position: static;
+}
+
+.form-group input,.form-group textarea{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
+}
+
+form{
+  border: 1px solid rgba(16, 46, 46, 1);
+  border-radius: 5px;
+  padding: 20px;
+}
+

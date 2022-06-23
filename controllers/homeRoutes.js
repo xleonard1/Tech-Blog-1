@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blogs} = require('../models');
+const { User, Blogs, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
 // router to get to the homepage
@@ -49,7 +49,7 @@ const withAuth = require('../utils/auth');
         order: [
           ['date_created', 'DESC'],
         ],
-        limit: 3
+        limit: 5
       });
       // Serialize data so the template can read it
       const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -77,7 +77,8 @@ try {
     attributes: { exclude: ['password'] },
     include: [
       {
-        model:Blogs
+        model:Blogs, 
+    
       }
     ],
   });
@@ -89,11 +90,12 @@ try {
     logged_in: true
   });
 } catch (err) {
+  console.log(err)
   res.status(500).json(err);
 }
 });
 
-
+// login routes
 
 router.get('/login', (req, res) => {
 // If the user is already logged in, redirect the request to another route
@@ -104,6 +106,9 @@ if (req.session.logged_in) {
 
 res.render('login');
 });
+
+
+// blog posts with id
 
 router.get('/post/:id', withAuth, async(req, res) => {
   try {
@@ -130,6 +135,37 @@ router.get('/post/:id', withAuth, async(req, res) => {
   } catch (err) {
     console.log(err)
     res.status(400).json(err)
+  }
+})
+
+
+
+router.get('/comments/:id', withAuth, async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+
+      order: [
+        ['date_created', 'DESC'],
+      ],
+      limit: 3
+    });
+    // Serialize data so the template can read it
+    const comment = commentData.get({ plain: true });
+
+    // Pass serialized data and session flag into template
+    res.render('blogpost', { 
+      ...comment, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 })
 
