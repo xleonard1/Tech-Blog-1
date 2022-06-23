@@ -22,7 +22,22 @@ body, html {
 
 .profile-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+
+
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: inherit;
+  text-align: center;
+}
+
+.profile-card h1 {
+  font-size: 5rem;
+  font-family: 'Trirong', serif;
+  margin-top: 25%;
 }
 
 
@@ -47,11 +62,10 @@ body, html {
 
 }
 
-#avatar {
-  width: 168px;
-  height: 168px;
-  border-radius: 50%;
-  margin-top: 4rem;
+#card-avatar {
+  max-height: inherit;
+  object-fit: cover;
+  position: relative;
 }
 
 .stats-card {

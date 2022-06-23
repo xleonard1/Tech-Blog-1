@@ -1,17 +1,18 @@
  
-
-<div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url({{avatar}});'>
-  <div class="container">
+<div class="title-container container">
+  <div>
     <h1 class="display-4">{{title}}</h1>
     <p class="lead">{{description}}</p>
   </div>
+  <div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url({{avatar}});'>
+  
 </div>
 
 {{!-- blog post --}}
 <section class="light blog-text">
 	<div class="container py-2">
-     <h1>{{title}}<span class="badge badge-secondary">New</span></h1>
-     <p>{{blog_text}}</p>
+     <h1 id = 'blog-title'>{{title}}<span class="badge badge-secondary">New</span></h1>
+     <p style="white-space: pre-wrap">{{blog_text}}</p>
   </div>
 </section>
 

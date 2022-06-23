@@ -33,6 +33,38 @@ const withAuth = require('../utils/auth');
   });
 
 
+
+
+  router.get('/dashboard', async (req, res) => {
+    try {
+      // Get all projects and JOIN with user data
+      const blogData = await Blogs.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+
+        order: [
+          ['date_created', 'DESC'],
+        ],
+        limit: 3
+      });
+      // Serialize data so the template can read it
+      const blogs = blogData.map((blog) => blog.get({ plain: true }));
+  
+      // Pass serialized data and session flag into template
+      res.render('dashboard', { 
+        blogs, 
+        logged_in: req.session.logged_in 
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
  
   
 
@@ -43,7 +75,11 @@ try {
   // Find the logged in user based on the session ID
   const userData = await User.findByPk(req.session.user_id, {
     attributes: { exclude: ['password'] },
-    include: [{model:Blogs}]
+    include: [
+      {
+        model:Blogs
+      }
+    ],
   });
 
   const user = userData.get({ plain: true });
@@ -79,6 +115,9 @@ router.get('/post/:id', withAuth, async(req, res) => {
           model: User,
           attributes: ['name']
         },
+      ],
+      order: [
+        ['date_created', 'DESC'],
       ],
     });
     const blog = blogData.get({ plain: true });
