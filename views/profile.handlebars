@@ -3,7 +3,11 @@
 
   
 <div class="profile-card card mb-3" style = "width: 73rem; height: 30rem">
+  {{#if avatar}}
     <img src="{{avatar}}" class="rounded" style = "width: 50%;" id= 'card-avatar' alt="...">
+  {{else}}
+   <img src="/imgs/placeholder image.png" class="rounded" style = "width: 50%;" id= 'card-avatar' alt="...">
+  {{/if}}
      <div class="card-body">
         <h1 class="card-title">Welcome, {{name}}! </h1>
         <button id="myBtn">Create New Blog</button>

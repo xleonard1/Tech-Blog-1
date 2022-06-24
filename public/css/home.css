@@ -60,6 +60,9 @@ body, html {
   text-align: left;
 }
 
+#description  {
+  text-align: center;
+}
 
 .blog-text {
     margin-top: -300px;
@@ -206,3 +209,25 @@ label{
   color: black;
 }
 
+#date-tag {
+  font-size: 10px;
+}
+
+.comment-content {
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+#delete-button {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#comment-h2 {
+  margin-top: 28px;
+}
+
+.comment-avatar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

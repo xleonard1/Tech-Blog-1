@@ -7,8 +7,6 @@ const newCommentHandler = async (event) => {
   const blogId =  event.target.getAttribute('data-id');
 
   if (message ) {
-
-
     const response = await fetch(`/api/blogs/${blogId}/comments`, {
       method: 'POST',
       body: JSON.stringify({ 
@@ -27,8 +25,32 @@ const newCommentHandler = async (event) => {
   }
 };
 
+const deleteComment = async (event) => {
+  event.preventDefault();
+ const commentId = event.target.getAttribute('data-id');
+
+ console.log(commentId)
+  if (commentId) {
+    console.log('hell yeah')
+    const response = await fetch(`/api/blogs/${commentId}/comments`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('blogpost');
+    } else {
+      alert('Failed to delete project');
+    }
+  }
+}
+
 document
   .querySelector('#post-button')
   .addEventListener('click', newCommentHandler)
+
+
+document
+   .querySelector('#delete-button')
+   .addEventListener('click', deleteComment)
 
 // open up new blog post modal

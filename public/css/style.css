@@ -417,10 +417,21 @@ a, a:hover {
 			$main-yellow-rgb-015,
 			transparent 50%
 		);
-	}
+  }
 }
 
-/* modal css */
+#myBtn {
+  color: white;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: #2B5592;
+  font-family:'Trirong', serif;
+  margin-top: 20px;
+}
+#post-button {
+  background-color: #2B5592;
+  color: white;
+}
 
 
 

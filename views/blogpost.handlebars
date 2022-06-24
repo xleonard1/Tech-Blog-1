@@ -3,10 +3,13 @@
 <div class="title-container container">
   <div>
     <h1 class="display-4">{{title}}</h1>
-    <p class="lead">{{description}}</p>
+    <p class="lead" id = "description">{{description}}</p>
   </div>
+  {{#if avatar}}
   <div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url({{avatar}});'>
-  
+  {{else}}
+  <div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url(https://picsum.photos/1000/1000);'></div>
+  {{/if}}
 </div>
 
 {{!-- blog post --}}
@@ -22,18 +25,22 @@
 
 <section>
 
-    <div class="container">
+    <div class="container comment-container">
         <div class="row">
-            <div class="col-sm-5 col-md-6 col-12 pb-4">
-                <h2>Comments</h2>
+            <div class="col-sm-5 col-md-6 col-12 pb-4 comment-content">
+                <h2 id="comment-h2">Comments</h2>
                 {{#each comments as |comment|}}
                 <div class="comment mt-4 text-justify float-left">
-                    <img src="{{user.avatar}}" alt="" class="rounded-circle" width="40" height="40">
+                    {{#if avatar}}
+                    <img src="{{user.avatar}}" alt="" class="rounded-circle comment-avatar" width="40" height="40">
+                    {{else}}
+                      <img src="/imgs/placeholder image.png" alt="" class="rounded-circle comment-avatar" width="40" height="40">
+                      {{/if}}
                     <h4>{{comment.user.name}}</h4>
-                    <span>{{comment.date_created}}</span>
-                    <br>
                     <p>{{comment.message}}</p>
-                </div>
+                    <span id="date-tag">{{comment.date_created}}</span>
+                    <a data-id='{{comment.id}}' id ='delete-button' type="button" id="post">Delete</a>
+                    </div>
                 {{/each}}
             </div>
              
@@ -49,7 +56,7 @@
                         </textarea>
                     </div> 
                     <div class="form-group">
-                        <button data-id='{{id}}' id ='post-button' type="button" id="post" class="btn">Post Comment</button>
+                        <button data-id='{{id}}' id ='post-button' type="button" class="btn">Post Comment</button>
                     </div>
                 </form>
             </div>
