@@ -133,26 +133,21 @@ body, html {
 }
 
 #post{
-  margin: 10px;
-  padding: 6px;
-  padding-top: 2px;
-  padding-bottom: 2px;
   text-align: center;
-  background-color: #ecb21f;
-  border-color: #a88734 #9c7e31 #846a29;
+  background-color:#ec1f1f;
   color: black;
   border-width: 1px;
-  border-style: solid;
-  border-radius: 13px;
-  width: 50%;
+  border-style: solid; 
+  border-radius: 10px;
+  width: 100%;
 }
 
 
 
-.comments{
+/* .comments{
   margin-top: 5%;
   margin-left: 20px;
-}
+} */
 
 .darker{
   border: 1px solid #ecb21f;
@@ -173,7 +168,7 @@ body, html {
   padding-top: 10px;
   
 }
-.comment h4,.comment span,.darker h4,.darker span{
+.comment #comment-h4,.comment span,.darker h4,.darker span{
   display: inline;
 }
 
@@ -192,14 +187,22 @@ label{
   position: static;
 }
 
-.form-group input,.form-group textarea{
+.comment-form-group input,.form-group textarea{
   border: 1px solid rgb(255, 255, 255);
   border-radius: 12px;
 }
 
-form{
+.comment-form{
   border: 1px solid rgba(16, 46, 46, 1);
   border-radius: 5px;
   padding: 20px;
+}
+
+#message {
+  background-color: white;
+  border: solid;
+}
+#comment-label {
+  color: black;
 }
 

@@ -12,6 +12,10 @@ User.hasMany(Comment, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 })
+Blogs.hasMany(Comment, {
+  foreignKey: 'blog_id',
+  onDelete: 'CASCADE'
+})
 
 Blogs.belongsTo(User, {
   foreignKey: 'user_id'
@@ -19,6 +23,10 @@ Blogs.belongsTo(User, {
 
 Comment.belongsTo(User, {
   foreignKey: 'user_id'
+})
+
+Comment.belongsTo(Blogs, {
+  foreignKey: 'blog_id',
 })
 
 

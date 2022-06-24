@@ -1,17 +1,18 @@
 
 const newCommentHandler = async (event) => {
   event.preventDefault();
+  console.log(event.target.getAttribute('data-id'))
 
-  const message = document.querySelector('#msg').value.trim();
- 
+  const message = document.querySelector('#message').value.trim();
+  const blogId =  event.target.getAttribute('data-id');
+
+  if (message ) {
 
 
-  if (message) {
-    console.log(message)
-    const response = await fetch(`/comments`, {
+    const response = await fetch(`/api/blogs/${blogId}/comments`, {
       method: 'POST',
       body: JSON.stringify({ 
-        message: message
+        message
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -19,15 +20,15 @@ const newCommentHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/post');
+      document.location.reload()
     } else {
-      alert('Failed to create project');
+      alert('Failed to post comment');
     }
   }
 };
 
 document
-  .querySelector('comment-form')
-  .addEventListener('submit', newCommentHandler)
+  .querySelector('#post-button')
+  .addEventListener('click', newCommentHandler)
 
 // open up new blog post modal

@@ -120,13 +120,22 @@ router.get('/post/:id', withAuth, async(req, res) => {
           model: User,
           attributes: ['name']
         },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User
+            }
+          ]
+        },
+        
       ],
       order: [
         ['date_created', 'DESC'],
       ],
     });
     const blog = blogData.get({ plain: true });
-
+     console.log(blog);
     res.render('blogpost', {
       ...blog,
       logged_in: req.session.logged_in 
@@ -138,36 +147,6 @@ router.get('/post/:id', withAuth, async(req, res) => {
   }
 })
 
-
-
-router.get('/comments/:id', withAuth, async (req, res) => {
-  try {
-    // Get all projects and JOIN with user data
-    const commentData = await Comment.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-
-      order: [
-        ['date_created', 'DESC'],
-      ],
-      limit: 3
-    });
-    // Serialize data so the template can read it
-    const comment = commentData.get({ plain: true });
-
-    // Pass serialized data and session flag into template
-    res.render('blogpost', { 
-      ...comment, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
 
 
 
