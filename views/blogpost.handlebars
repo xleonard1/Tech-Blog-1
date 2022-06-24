@@ -31,8 +31,8 @@
                 <h2 id="comment-h2">Comments</h2>
                 {{#each comments as |comment|}}
                 <div class="comment mt-4 text-justify float-left">
-                    {{#if avatar}}
-                    <img src="{{user.avatar}}" alt="" class="rounded-circle comment-avatar" width="40" height="40">
+                    {{#if comment.user.avatar}}
+                    <img src="{{comment.user.avatar}}" alt="" class="rounded-circle comment-avatar" width="40" height="40">
                     {{else}}
                       <img src="/imgs/placeholder image.png" alt="" class="rounded-circle comment-avatar" width="40" height="40">
                       {{/if}}
