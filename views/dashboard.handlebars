@@ -1,6 +1,5 @@
-<section class="light">
+<section class="light dashboard-color">
 	<div class="container py-2">
-		<div class="h1 text-center text-dark" id="pageHeaderTitle">Featured Blogs</div>
  {{#each blogs as |blog|}}
 		<article class="postcard light blue">
 			<a class="postcard__img_link" href="{{blog.id}}">
@@ -15,8 +14,10 @@
 				</div>
 				<div class="postcard__bar"></div>
 				<div class="postcard__preview-txt">{{blog.description}}</div>
-				<ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}</li>
+				<ul class="postcard__tagbox name-and-view">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>
+					    {{blog.user.name}}
+					</li>
 					<li class="tag__item play blue">
 						<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post</a>
 					</li>

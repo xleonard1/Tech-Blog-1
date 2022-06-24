@@ -446,6 +446,14 @@ a, a:hover {
   color: white;
 }
 
+.dashboard-color {
+  background-color: white;
+}
 
+.name-and-view {
+  display: flex;
+  justify-content: left;
+  list-style: none;
+}
 
 
