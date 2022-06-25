@@ -168,6 +168,26 @@ router.delete('/post/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/post/:id', withAuth, async (req, res) => {
+  try {
+     const blogData = await Blogs.update(
+       {
+         blog_text: blog_text
+       },
+       {
+         where: {
+         id: req.params.id,
+         user_id: req.session.user_id
+       },
+     });
+
+    res.status(200).json(blogData)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+})
+
 
 
 
