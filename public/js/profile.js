@@ -35,21 +35,7 @@ const newFormHandler = async (event) => {
 // open up new blog post modal
 
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
 
 
 const cloudName = "dcldpb9uf"; // replace with your own cloud name
@@ -131,7 +117,5 @@ document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.project-list')
-//   .addEventListener('click', delButtonHandler);
+
 
