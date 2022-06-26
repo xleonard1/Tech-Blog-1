@@ -14,6 +14,34 @@
 
 
 
+
+
+
+{{!--  Other log cards/ possiblity --}}
+<div class="card-deck">
+	 {{#each blogs as |blog|}}
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.title}}</h5>
+      <p class="card-text">{{blog.description}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{format_date blog.date_created}}</small>
+    </div>
+	<ul class="postcard__tagbox name-and-view">
+		<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}
+		</li>
+		<li class="tag__item play blue">
+			<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post
+			</a>
+		</li>
+	</ul>
+  </div>
+  {{/each}}
+</div>
+
+
       {{!-- blog cards --}}
 
 <section class="light">
@@ -44,3 +72,28 @@
 	</div>
 </section>
 
+
+{{!--  Other log cards/ possiblity --}}
+<div class="card-deck">
+	 {{#each blogs as |blog|}}
+  <div class="card">
+	 
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.title}}</h5>
+      <p class="card-text">{{blog.description}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{format_date blog.date_created}}</small>
+    </div>
+	<ul class="postcard__tagbox name-and-view">
+		<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}
+		</li>
+		<li class="tag__item play blue">
+			<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post
+			</a>
+		</li>
+	</ul>
+  </div>
+  {{/each}}
+</div>

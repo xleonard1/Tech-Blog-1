@@ -45,7 +45,7 @@ const deleteComment = async (event) => {
 }
 
 document
-  .querySelector('#post-button')
+  .querySelector('#post-comment-button')
   .addEventListener('click', newCommentHandler)
 
 

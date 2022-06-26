@@ -20,7 +20,7 @@
      <p style="white-space: pre-wrap">{{blog_text}}</p>
     </div>
     <div class="del-edit">
-     <button data-id='{{id}}' id ='edit-button' type="button" class="btn"> Edit Post
+     <button  id ='edit-button' type="button" class="btn"> Edit Post
      </button>
      <button data-id='{{id}}' id ='post-button' type="button" class="btn"> Delete Post
     </button>
@@ -49,11 +49,7 @@
                     <a data-id='{{comment.id}}' id ='delete-button' type="button" id="post">Delete</a>
                     </div>
                 {{/each}}
-            </div>
-             
-
-
-       
+            </div>       
             <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
                 <form class="comment-poster"id="algin-form">
                     <div class="comment-form-group form-group">
@@ -63,21 +59,60 @@
                         </textarea>
                     </div> 
                     <div class="form-group">
-                        <button data-id='{{id}}' id ='post-button' type="button" class="btn">Post Comment
+                        <button data-id='{{id}}' id ='post-comment-button' type="button" class="btn">Post Comment
                         </button>
                     </div>
                 </form>
             </div>
         </div>
         {{#if comments.length}}
-           
-
-
-
         {{/if}}
     </div>
 </section>
 
 
+<!-- The Modal -->
+<div id="editModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class = 'new-blog-form'>
+  <div class="form-outline mb-4">
+    <input type="text" id="edited-name" class="form-control" />
+    <label class="form-label" for="form6Example3">Title</label>
+  </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="edited-description" class="form-control" />
+    <label class="form-label" for="form6Example4">Description</label>
+  </div>
+  <div class="form-outline mb-4">
+     <div>
+       <button id="upload_widget" class="cloudinary-button">
+        Upload Cover Photo
+      </button>
+      </div>
+    </div>
+
+
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <textarea class="form-control" id="edited-text" rows="4">{{blog_text}} {{editedText}}</textarea>
+    <label class="form-label" for="form6Example7">Article</label>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" data-id='{{id}}' class=" edit-blog-btn btn btn-primary btn-block mb-4">Edit Blog</button>
+  </form>
+  </div>
+
+</div>
+
+
+
+
 <script src='/js/comment.js'></script>
-<script src ='/js/edit.js'></script>
+<script src='/js/edit.js'></script>
+
