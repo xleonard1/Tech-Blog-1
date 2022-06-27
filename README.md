@@ -40,3 +40,39 @@ THEN the user is able to view comments but I am prompted to log in again before 
 
 ```
 
+
+## Table of Contents
+
+
+
+1. [Installation](#Installation)
+2. [How to Use](#HowTo)
+3. [Contributors](#Contributors)
+4. [Demo](#Demo)
+
+
+## Installation
+## How to Use
+## Contributors
+## [Content Management Demo](Resources/Ecommerce.gif) 
+
+
+## Installation
+
+To run this project the user needs to run mysql -u root -p, then enter their sql password. Then the user must run SOURCE schema.sql to render the schema file and database. Then the user must run npm i on the server file. Once the user as run npm i, the user then needs to run npm run seeds, to render the seeds files to the databases. Lastly, the user must run node server.js and go into insomnia to run the requests. 
+
+## How to use the Project
+
+The user only needs to know the express routes and the criteria for the post and put requests. 
+
+## Contributors
+
+Xavier D. Leonard Jr.(me)
+
+## Demo
+
+![Ecommerce Demo](/public/imgs/demo.png)
+
+## Links
+
+
