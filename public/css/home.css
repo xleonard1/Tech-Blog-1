@@ -3,13 +3,27 @@
 body, html {
     height: 100%;
 }
+
+
 .jumbotron {
     background-color: black;
+    background-size: cover;
     height: 40rem;
-    padding: 3rem!important;
+    padding: 3rem;
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+}
+
 .card-container {
   overflow: none;
   display: flex;
@@ -24,6 +38,11 @@ body, html {
 .blog-header {
   position: relative;
   display: inline;
+
+}
+
+.author-text{
+  margin-left: 0;
 }
 
 .blog-header-logo {
@@ -41,6 +60,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Trirong', serif;
+    color: white;
 }
 .hero-text h1 {
     font-weight: 600;

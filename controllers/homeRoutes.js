@@ -17,7 +17,7 @@ const withAuth = require('../utils/auth');
         order: [
           ['date_created', 'DESC'],
         ],
-        limit: 3
+        limit: 4
       });
       // Serialize data so the template can read it
       const blogs = blogData.map((blog) => blog.get({ plain: true }));

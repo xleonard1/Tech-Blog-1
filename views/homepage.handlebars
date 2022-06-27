@@ -1,8 +1,15 @@
 <!-- Loop over each object in the projects array -->
 
-      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark jumbotron-fluid">
+      
+	  
+    
+   
+	  
+	  
+	  
+	  <div class="jumbotron p-3 p-md-5 text-white  bg-dark jumbotron-fluid">
         <div class="container hero-text col-md-6 px-0" >
-          <h1 class="display-4">Tech Talk</h1>
+          <h1 class="display- card-title">Tech Talk</h1>
           <p class="lead my-3">{{description}}</p>
 		  {{#unless logged_in}}
           <p class="lead">
@@ -17,34 +24,74 @@
 
 
 
-{{!--  Other log cards/ possiblity --}}
-<div class="card-deck">
-	 {{#each blogs as |blog|}}
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{blog.title}}</h5>
-      <p class="card-text">{{blog.description}}</p>
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+		{{#each blogs as |blog|}}
+    <div class="col-lg-6 mb-6">
+    <div class="card " style="max-height:480px; min-height:480px">
+      <img src="https://picsum.photos/1000/1000" alt="" class="card-img-top" style="max-height: 220px;">
+      <div class="card-body">
+        <h5 class="card-title postcard__title blue">{{blog.title}}</h5>
+        <p class="card-text postcard__preview-txt">{{blog.description}}</p>
+		    <p class=" card-text tag__item author-text postcard__preview-txt"><i class="fas  fa-tag mr-2"></i> Written by: {{blog.user.name}}</p>
+       <a href="/post/{{blog.id}}" >Read More</a>
+       <div class="card-footer">
+           <small class="text-muted">{{format_date blog.date_created}}</small>
+         </div>
+      </div>
+     </div>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">{{format_date blog.date_created}}</small>
+	{{/each}}
+	
     </div>
-	<ul class="postcard__tagbox name-and-view">
-		<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}
-		</li>
-		<li class="tag__item play blue">
-			<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post
-			</a>
-		</li>
-	</ul>
   </div>
-  {{/each}}
 </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!--  Other log cards/ possiblity --}}
+{{!-- <div class="card-deck blog-display-home" style="max-height: 250px; max-width: 400px">
+	 
+       <div class="col col-sm card">
+		   <div>
+         <img class="display-img card-img-top" src="https://picsum.photos/1000/1000" alt="Card image cap" style="max-height: 250px; max-width: 400px">
+         <div class="card-body">
+		 </div>
+           <h5 class="card-title">{{blog.title}}</h5>
+           <p class="card-text">{{blog.description}}</p>
+         </div>
+         <div class="card-footer">
+           <small class="text-muted">{{format_date blog.date_created}}</small>
+         </div>
+	     <ul class="postcard__tagbox name-and-view">
+		    <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}
+		    </li>
+		    <li class="tag__item play blue">
+			 <a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post
+			 </a>
+		    </li>
+	     </ul>
+	   </div>
+     {{/each}}
+	
+</div> --}}
 
 
       {{!-- blog cards --}}
 
-<section class="light">
+{{!-- <section class="light">
 	<div class="container py-2">
 		<div class="h1 text-center text-dark" id="pageHeaderTitle">Featured Blogs</div>
  {{#each blogs as |blog|}}
@@ -70,30 +117,5 @@
 		</article>
     {{/each}}
 	</div>
-</section>
+</section> --}}
 
-
-{{!--  Other log cards/ possiblity --}}
-<div class="card-deck">
-	 {{#each blogs as |blog|}}
-  <div class="card">
-	 
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{blog.title}}</h5>
-      <p class="card-text">{{blog.description}}</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">{{format_date blog.date_created}}</small>
-    </div>
-	<ul class="postcard__tagbox name-and-view">
-		<li class="tag__item"><i class="fas fa-tag mr-2"></i>{{blog.user.name}}
-		</li>
-		<li class="tag__item play blue">
-			<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post
-			</a>
-		</li>
-	</ul>
-  </div>
-  {{/each}}
-</div>
