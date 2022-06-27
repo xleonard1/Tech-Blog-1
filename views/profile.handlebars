@@ -10,13 +10,13 @@
   {{/if}}
      <div class="card-body">
         <h1 class="card-title">Welcome, {{name}}! </h1>
-        <button id="myBtn">Create New Blog</button>
+        <button id="create-button">Create New Blog</button>
      </div>
 </div>
 {{!-- blog submission form --}}
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="blogModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -63,7 +63,6 @@
 		<div class=" featured-text h1 text-center text-dark" id="pageHeaderTitle">Featured Blogs</div>
  {{#each blogs as |blog|}}
 		<article class="postcard light blue">
-				<img class="postcard__img" src="{{avatar}}" alt="Image Title" />
 			<div class="postcard__text t-dark">
 				<h1 class="postcard__title blue"><a href="{{blog.id}}">{{blog.title}}</a></h1>
 				<div class="postcard__subtitle small">
