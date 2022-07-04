@@ -88,14 +88,9 @@ body, html {
   max-height: 40rem;
 }
 
-.title-container h1 {
-    /* margin-top: -200px; */
-  color: inherit;
-  font-size: 7rem;
-  font-weight: 800;
-  text-align: center;
+.blogpost-title {
   font-family: 'Trirong', serif;
-
+  text-align: center;
 }
 
 #blog-title {
@@ -277,4 +272,8 @@ label{
 .comment-avatar {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.footer {
+ position: sticky;
+ bottom: 0;
 }

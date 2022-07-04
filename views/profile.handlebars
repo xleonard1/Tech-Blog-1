@@ -2,13 +2,15 @@
 
 
   
-<div class="profile-card card mb-3" style = "width: 73rem; max-height: 28rem">
+<div class="profile-card card" style = "max-width: 73rem; max-height: 28rem">
   {{#if avatar}}
-    <img src="{{avatar}}" class="rounded" style = "width: 50%;" id= 'card-avatar' alt="...">
+  <div class = "col-4 d-none d-sm-block">
+    <img src="{{avatar}}" class="rounded col-lg-6 cardavatar" style = "max-width: 50%;" id= 'card-avatar' alt="...">
+  </div>
   {{else}}
    <img src="/imgs/placeholder image.png" class="rounded" style = "width: 50%;" id= 'card-avatar' alt="...">
   {{/if}}
-     <div class="card-body">
+     <div class="card-body card-content profilecard-content">
         <h1 class="card-title">Welcome, {{name}}! </h1>
         <button id="create-button">Create New Blog</button>
      </div>

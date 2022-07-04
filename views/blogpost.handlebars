@@ -1,20 +1,14 @@
  
-<div class="container">
-   <div class="title-container container">
-      <div>
-        <h1 class="display-4">{{title}}</h1>
-        <p class="lead" id = "description">{{description}}</p>
-  </div>
+<div class="container blog-container">
+        <h1 class="display-4 blogpost-title">{{title}}</h1>
+        <p class="lead blog-description" id = "description">{{description}}</p>
      {{#if avatar}}
   <div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url({{avatar}});'>
   {{else}}
   <div class="blogpost-jumbotron jumbotron jumbotron-fluid" style = 'background-image: url(https://picsum.photos/1000/1000);'>
 </div>
   {{/if}}
-</div>
-
-{{!-- blog post --}}
- <section  class="light blog-text">
+   <section  class="light blog-text">
 	<div class="container py-2">
      <h1 id = 'blog-title'>{{title}}<span class="badge badge-secondary">New</span></h1>
      <p style="white-space: pre-wrap">{{blog_text}}</p>
@@ -27,7 +21,11 @@
     </div>
 
  </section>
+ </div>
 </div>
+
+{{!-- blog post --}}
+
 
 {{!-- comments  --}}
 
