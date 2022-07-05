@@ -29,18 +29,27 @@
     <div class="row">
 		{{#each blogs as |blog|}}
     <div class="col-lg-6 mb-6">
-    <div class="card " style="max-height:480px; min-height:480px">
-      <img src="https://picsum.photos/1000/1000" alt="" class="card-img-top" style="max-height: 220px;">
-      <div class="card-body">
-        <h5 class="card-title postcard__title blue">{{blog.title}}</h5>
-        <p class="card-text postcard__preview-txt">{{blog.description}}</p>
-		    <p class=" card-text tag__item author-text postcard__preview-txt"><i class="fas  fa-tag mr-2"></i> Written by: {{blog.user.name}}</p>
-       <a href="/post/{{blog.id}}" >Read More</a>
-       <div class="card-footer">
-           <small class="text-muted">{{format_date blog.date_created}}</small>
-         </div>
-      </div>
-     </div>
+     <article class="postcard light blue" style='min-height: 500px'>
+				<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+			<div class="postcard__text t-dark">
+				<h1 class="postcard__title blue">{{blog.title}}</h1>
+				<div class="postcard__subtitle small">
+					<time datetime="2020-05-25 12:00:00">
+						<i class="fas fa-calendar-alt mr-2"></i>{{format_date blog.date_created}}
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">{{blog.description}}</div>
+				<ul class="postcard__tagbox name-and-view">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>
+					    {{blog.user.name}}
+					</li>
+					<li class="tag__item play blue">
+						<a href="/post/{{blog.id}}"><i class="fas fa-play mr-2"></i>view full post</a>
+					</li>
+				</ul>
+			</div>
+		</article>
     </div>
 	{{/each}}
 	
