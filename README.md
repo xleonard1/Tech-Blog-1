@@ -54,16 +54,15 @@ THEN the user is able to view comments but I am prompted to log in again before 
 ## Installation
 ## How to Use
 ## Contributors
-## [Content Management Demo](Resources/Ecommerce.gif) 
 
 
 ## Installation
 
-To run this project the user needs to run mysql -u root -p, then enter their sql password. Then the user must run SOURCE schema.sql to render the schema file and database. Then the user must run npm i on the server file. Once the user as run npm i, the user then needs to run npm run seeds, to render the seeds files to the databases. Lastly, the user must run node server.js and go into insomnia to run the requests. 
+No Installation Necessary
 
 ## How to use the Project
 
-The user only needs to know the express routes and the criteria for the post and put requests. 
+The user should create a log-in, once the user creates a log in, they will be able to upload a profile picture, create blogs, view previously created blogs, edit blogs, view other's blogs, and comment on blogs. The user will also be able to delete blogs that belong to them, and comments that belong to themselves.  
 
 ## Contributors
 
@@ -71,7 +70,7 @@ Xavier D. Leonard Jr.(me)
 
 ## Demo
 
-![Ecommerce Demo](/public/imgs/demo.png)
+![tech talk Demo](/public/imgs/demo.png)
 
 ## Links
 https://guarded-shelf-26727.herokuapp.com/
